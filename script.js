@@ -1,67 +1,84 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Apple Style Interactive Card
+const card = document.querySelector(".card");
 
-    // Smooth card entrance
-    const card = document.querySelector(".card");
+document.addEventListener("mousemove",(e)=>{
 
-    card.animate(
-        [
-            {
-                opacity: 0,
-                transform: "translateY(30px) scale(0.96)"
-            },
-            {
-                opacity: 1,
-                transform: "translateY(0) scale(1)"
-            }
-        ],
+    const x=(window.innerWidth/2-e.clientX)/30;
+    const y=(window.innerHeight/2-e.clientY)/30;
+
+    card.style.transform=
+    `rotateY(${x}deg) rotateX(${-y}deg)`;
+
+});
+
+document.addEventListener("mouseleave",()=>{
+
+    card.style.transform="rotateY(0deg) rotateX(0deg)";
+
+});
+
+// Smooth Fade In
+window.addEventListener("load",()=>{
+
+    card.animate([
         {
-            duration: 900,
-            easing: "cubic-bezier(.2,.8,.2,1)",
-            fill: "forwards"
+            opacity:0,
+            transform:"translateY(40px) scale(.95)"
+        },
+        {
+            opacity:1,
+            transform:"translateY(0) scale(1)"
         }
-    );
-
-    // Premium hover animation
-    document.querySelectorAll("a").forEach(button => {
-
-        button.addEventListener("mouseenter", () => {
-
-            button.style.transform = "translateY(-4px) scale(1.02)";
-
-        });
-
-        button.addEventListener("mouseleave", () => {
-
-            button.style.transform = "";
-
-        });
-
+    ],{
+        duration:900,
+        easing:"cubic-bezier(.22,1,.36,1)",
+        fill:"forwards"
     });
 
-    // Ripple click effect
-    document.querySelectorAll("a").forEach(button => {
+});
 
-        button.addEventListener("click", function(e){
+// Button Ripple
+document.querySelectorAll("a").forEach(button=>{
 
-            const ripple = document.createElement("span");
+button.addEventListener("click",function(e){
 
-            ripple.className = "ripple";
+const circle=document.createElement("span");
 
-            const rect = this.getBoundingClientRect();
+const d=Math.max(this.clientWidth,this.clientHeight);
 
-            ripple.style.left = (e.clientX - rect.left) + "px";
-            ripple.style.top = (e.clientY - rect.top) + "px";
+circle.style.width=d+"px";
+circle.style.height=d+"px";
 
-            this.appendChild(ripple);
+circle.style.left=e.offsetX-d/2+"px";
+circle.style.top=e.offsetY-d/2+"px";
 
-            setTimeout(() => {
+circle.classList.add("ripple");
 
-                ripple.remove();
+this.appendChild(circle);
 
-            },600);
+setTimeout(()=>{
 
-        });
+circle.remove();
 
-    });
+},600);
+
+});
+
+});
+
+// Floating Background
+document.querySelectorAll(".light").forEach(light=>{
+
+let x=Math.random()*20;
+let y=Math.random()*20;
+
+setInterval(()=>{
+
+x=(Math.random()-0.5)*30;
+y=(Math.random()-0.5)*30;
+
+light.style.transform=`translate(${x}px,${y}px)`;
+
+},4000);
 
 });
