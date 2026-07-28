@@ -617,3 +617,36 @@ margin-top:10px;
 }
 
 }
+
+.card{
+    transition:transform .2s ease;
+    transform-style:preserve-3d;
+}
+
+.ripple{
+
+position:absolute;
+
+border-radius:50%;
+
+transform:scale(0);
+
+background:rgba(255,255,255,.45);
+
+animation:ripple .6s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(8);
+
+opacity:0;
+
+}
+
+}
