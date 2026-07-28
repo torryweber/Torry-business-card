@@ -1,6 +1,9 @@
 BEGIN:VCARD
 VERSION:3.0
 FN:Torry Ngan
-TEL:+60102215027
+N:Ngan;Torry;;;
+ORG:Saint-Gobain Weber Malaysia
+TITLE:Sales Manager
+TEL;TYPE=CELL:+60102215027
 EMAIL:torry.ngan@saint-gobain.com
 END:VCARD
