@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Torry Ngan | Sales Manager</title>
 
+<meta name="theme-color" content="#005EB8">
+
 <link rel="stylesheet" href="style.css">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -16,45 +25,98 @@
 
 <div class="card">
 
-<img class="logo" src="weber-logo.png">
+<img src="weber-logo.png" class="logo" alt="Saint-Gobain Weber Logo">
 
-<img class="profile" src="profile.jpg">
+<img src="profile.jpg" class="profile" alt="Torry Ngan">
 
 <h1>Torry Ngan</h1>
 
-<h3>Sales Manager</h3>
+<h2>Sales Manager</h2>
 
-<p>Saint-Gobain Weber Malaysia</p>
+<p class="company">
+Saint-Gobain Weber Malaysia
+</p>
 
-<a class="save" href="contact.vcf">
+<a class="save" href="contact.vcf" download>
 💾 Save Contact
 </a>
 
-<div class="buttons">
+<div class="grid">
 
-<a href="tel:+60102215027">📞 Call</a>
+<a href="tel:+60102215027">
 
-<a href="https://wa.me/60102215027">💬 WhatsApp</a>
+<div class="icon">📞</div>
 
-<a href="mailto:torry.ngan@saint-gobain.com">✉️ Email</a>
-
-<a href="https://waze.com/ul/hw284kqw78" target="_blank">📍 Waze</a>
-
-<a href="https://sites.google.com/view/weber-emix-tekbond/home" target="_blank">🌐 Product Catalogue
+<div>Call</div>
 
 </a>
-  
+
+<a href="https://wa.me/60102215027" target="_blank">
+
+<div class="icon">💬</div>
+
+<div>WhatsApp</div>
+
+</a>
+
+<a href="mailto:torry.ngan@saint-gobain.com">
+
+<div class="icon">✉️</div>
+
+<div>Email</div>
+
+</a>
+
+<a href="https://waze.com/ul/hw284kqw78" target="_blank">
+
+<div class="icon">📍</div>
+
+<div>Waze</div>
+
+</a>
+
 </div>
+
+<a class="catalogue"
+href="https://sites.google.com/view/weber-emix-tekbond/home"
+target="_blank">
+
+🌐 Product Catalogue
+
+</a>
 
 <footer>
 
+<div class="footer-text">
+
 Building Better Together
+
+</div>
 
 </footer>
 
 </div>
 
-<script src="script.js"></script>
+<script>
+
+document.querySelectorAll("a").forEach(button=>{
+
+button.addEventListener("mouseenter",()=>{
+
+button.style.transform="translateY(-5px)";
+
+});
+
+button.addEventListener("mouseleave",()=>{
+
+button.style.transform="translateY(0px)";
+
+});
+
+});
+
+</script>
 
 </body>
+
 </html>
